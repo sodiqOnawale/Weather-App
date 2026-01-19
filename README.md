@@ -132,7 +132,7 @@ The app features a custom "Midnight Aurora" theme with:
 ## 🔧 Technologies Used
 
 - **React 18** - UI library with hooks
-- **TypeScript 5** - Static type checking
+- **TypeScript 4** - Static type checking
 - **Material UI 5** - Component library & theming
 - **Jest & React Testing Library** - Unit testing
 - **OpenWeatherMap API** - Weather data provider

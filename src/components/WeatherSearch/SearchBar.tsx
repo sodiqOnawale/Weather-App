@@ -15,20 +15,20 @@ interface SearchBarProps {
     isLoading: boolean;
 }
 
-function SearchBar({ handleSearch, onUseMyLocation, unit, onUnitChange, isLoading }: SearchBarProps) {
+const SearchBar = ({ handleSearch, onUseMyLocation, unit, onUnitChange, isLoading }: SearchBarProps) => {
     const [location, setLocation] = useState('');
 
-    function handleChange(e: ChangeEvent<HTMLInputElement>) {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setLocation(e.target.value);
     }
 
-    function onSearch(event: FormEvent<HTMLFormElement>) {
+    const onSearch = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (!location.trim()) return;
         handleSearch(location);
     }
 
-    function handleUnitChange(_event: React.MouseEvent<HTMLElement>, newUnit: TemperatureUnit | null) {
+    const handleUnitChange = (_event: React.MouseEvent<HTMLElement>, newUnit: TemperatureUnit | null) => {
         if (newUnit !== null) onUnitChange(newUnit);
     }
 
@@ -97,6 +97,6 @@ function SearchBar({ handleSearch, onUseMyLocation, unit, onUnitChange, isLoadin
             </Stack>
         </Box>
     );
-}
+};
 
 export default SearchBar;

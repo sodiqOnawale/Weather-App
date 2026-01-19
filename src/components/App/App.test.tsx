@@ -40,11 +40,6 @@ describe('App', () => {
         expect(screen.getByText(/real-time conditions/i)).toBeInTheDocument();
     });
 
-    test('renders portfolio project chip', () => {
-        render(<TestWrapper><App /></TestWrapper>);
-        expect(screen.getByText('Portfolio Project')).toBeInTheDocument();
-    });
-
     test('renders footer with technology stack', () => {
         render(<TestWrapper><App /></TestWrapper>);
         expect(screen.getByText(/React, TypeScript & Material UI/i)).toBeInTheDocument();

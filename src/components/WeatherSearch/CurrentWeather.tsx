@@ -24,7 +24,7 @@ interface CurrentWeatherProps {
     unit: TemperatureUnit;
 }
 
-function CurrentWeather({ weatherData, unit }: CurrentWeatherProps) {
+const CurrentWeather = ({ weatherData, unit }: CurrentWeatherProps) => {
     const tempUnit = unit === 'imperial' ? '°F' : '°C';
 
     const localDate = useMemo(() => {
@@ -89,11 +89,11 @@ function CurrentWeather({ weatherData, unit }: CurrentWeatherProps) {
             </Stack>
         </Box>
     );
-}
+};
 
 interface MetaItemProps { label: string; value: string; icon?: React.ReactNode; }
 
-function MetaItem({ label, value, icon }: MetaItemProps) {
+const MetaItem = ({ label, value, icon }: MetaItemProps) => {
     return (
         <Stack alignItems="center" spacing={0.25}>
             <Typography variant="caption" sx={{ color: 'text.secondary', textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '0.7rem' }}>{label}</Typography>
@@ -103,9 +103,9 @@ function MetaItem({ label, value, icon }: MetaItemProps) {
             </Stack>
         </Stack>
     );
-}
+};
 
-function CurrentWeatherSkeleton() {
+const CurrentWeatherSkeleton = () => {
     return (
         <Box sx={{ py: 3, textAlign: 'center' }}>
             <Stack spacing={2} alignItems="center">
@@ -121,11 +121,11 @@ function CurrentWeatherSkeleton() {
             </Stack>
         </Box>
     );
-}
+};
 
-function formatTime(unixTime: number, timezoneOffset: number): string {
+const formatTime = (unixTime: number, timezoneOffset: number): string => {
     if (!unixTime || typeof timezoneOffset !== 'number') return '—';
     return new Date((unixTime + timezoneOffset) * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
-}
+};
 
 export default CurrentWeather;
