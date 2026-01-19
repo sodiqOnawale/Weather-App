@@ -21,11 +21,11 @@ interface Coordinates {
     lon: number;
 }
 
-function WeatherSearch({
+const WeatherSearch = ({
     unit,
     onUnitChange,
     onLoadWeatherData
-}: WeatherSearchProps) {
+}: WeatherSearchProps) => {
     const [weatherData, setWeatherData] = useState<WeatherData | undefined>();
     const lastCoordsRef = useRef<Coordinates | undefined>();
     const [isLoading, setIsLoading] = useState(false);
@@ -50,7 +50,7 @@ function WeatherSearch({
         [unit, onLoadWeatherData]
     );
 
-    async function handleSearch(location: string) {
+    const handleSearch = async (location: string) => {
         setIsLoading(true);
         setErrorMessage('');
         try {
@@ -67,7 +67,7 @@ function WeatherSearch({
         } finally {
             setIsLoading(false);
         }
-    }
+    };
 
     const handleUseMyLocation = useCallback(() => {
         setIsLoading(true);

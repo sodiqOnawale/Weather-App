@@ -8,7 +8,7 @@ interface WeatherHighlightsProps {
     unit: TemperatureUnit;
 }
 
-function WeatherHighlights({ weatherData, unit }: WeatherHighlightsProps) {
+const WeatherHighlights = ({ weatherData, unit }: WeatherHighlightsProps) => {
     return (
         <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
             <Stack direction="row" alignItems="center" justifyContent="space-between" flexWrap="wrap" gap={1} sx={{ mb: 3 }}>
@@ -32,6 +32,6 @@ function WeatherHighlights({ weatherData, unit }: WeatherHighlightsProps) {
             </Box>
         </Box>
     );
-}
+};
 
 export default WeatherHighlights;
